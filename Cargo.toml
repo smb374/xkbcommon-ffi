@@ -1,0 +1,26 @@
+[package]
+name = "xkbcommon-ffi"
+version = "0.1.0"
+edition = "2018"
+
+authors = ["Po-Yeh Chen <smb374.cs08@nctu.edu.tw>"]
+license = "MIT"
+build = "build.rs"
+
+description = "Rust ffi binding to libxkbcommon."
+repository = "https://github.com/smb374/xkbcommon-ffi"
+keywords    = ["xkb", "xkbcommon", "x11", "xcb"]
+
+[build-dependencies]
+bindgen = "~0.59"
+pkg-config = "~0.3"
+
+[dependencies]
+libc = "~0.2"
+
+[profile.release]
+lto = "thin"
+
+[features]
+static = []
+x11 = []
